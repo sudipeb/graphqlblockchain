@@ -1,4 +1,4 @@
-class Headquarters {
+class Headquarters{
   final String address;
   final String city;
   final String state;

@@ -1,0 +1,12 @@
+query Query {
+  company {
+    ceo
+    founded
+    founder
+    headquarters {
+      address
+      city
+      state
+    }
+  }
+}

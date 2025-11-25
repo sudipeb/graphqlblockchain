@@ -38,12 +38,16 @@ import 'package:graphbitcoin/__generated__/schema.schema.gql.dart'
         Gusers_update_column,
         Guuid,
         Guuid_comparison_exp;
-import 'package:graphbitcoin/features/ceodetails/__generated__/get_ceo_details.data.gql.dart'
-    show GQueryData, GQueryData_company, GQueryData_company_headquarters;
-import 'package:graphbitcoin/features/ceodetails/__generated__/get_ceo_details.req.gql.dart'
-    show GQueryReq;
-import 'package:graphbitcoin/features/ceodetails/__generated__/get_ceo_details.var.gql.dart'
-    show GQueryVars;
+import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.data.gql.dart'
+    show
+        GCompanyData,
+        GCompanyData_company,
+        GCompanyData_company_headquarters,
+        GCompanyData_company_links;
+import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.req.gql.dart'
+    show GCompanyReq;
+import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.var.gql.dart'
+    show GCompanyVars;
 
 part 'serializers.gql.g.dart';
 
@@ -52,6 +56,12 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GCapsulesFind,
+  GCompanyData,
+  GCompanyData_company,
+  GCompanyData_company_headquarters,
+  GCompanyData_company_links,
+  GCompanyReq,
+  GCompanyVars,
   GCoresFind,
   GDate,
   GHistoryFind,
@@ -59,11 +69,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GMissionsFind,
   GObjectID,
   GPayloadsFind,
-  GQueryData,
-  GQueryData_company,
-  GQueryData_company_headquarters,
-  GQueryReq,
-  GQueryVars,
   GShipsFind,
   GString_comparison_exp,
   Gconflict_action,

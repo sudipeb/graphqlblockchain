@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_ceo_details.req.gql.dart';
+part of 'get_company_details.req.gql.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GQueryReq> _$gQueryReqSerializer = _$GQueryReqSerializer();
+Serializer<GCompanyReq> _$gCompanyReqSerializer = _$GCompanyReqSerializer();
 
-class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
+class _$GCompanyReqSerializer implements StructuredSerializer<GCompanyReq> {
   @override
-  final Iterable<Type> types = const [GQueryReq, _$GQueryReq];
+  final Iterable<Type> types = const [GCompanyReq, _$GCompanyReq];
   @override
-  final String wireName = 'GQueryReq';
+  final String wireName = 'GCompanyReq';
 
   @override
   Iterable<Object?> serialize(
     Serializers serializers,
-    GQueryReq object, {
+    GCompanyReq object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = <Object?>[
       'vars',
       serializers.serialize(
         object.vars,
-        specifiedType: const FullType(_i3.GQueryVars),
+        specifiedType: const FullType(_i3.GCompanyVars),
       ),
       'operation',
       serializers.serialize(
@@ -53,7 +53,7 @@ class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
         ..add(
           serializers.serialize(
             value,
-            specifiedType: const FullType(_i2.GQueryData),
+            specifiedType: const FullType(_i2.GCompanyData),
           ),
         );
     }
@@ -94,12 +94,12 @@ class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
   }
 
   @override
-  GQueryReq deserialize(
+  GCompanyReq deserialize(
     Serializers serializers,
     Iterable<Object?> serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = GQueryReqBuilder();
+    final result = GCompanyReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -111,9 +111,9 @@ class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
           result.vars.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i3.GQueryVars),
+                  specifiedType: const FullType(_i3.GCompanyVars),
                 )!
-                as _i3.GQueryVars,
+                as _i3.GCompanyVars,
           );
           break;
         case 'operation':
@@ -136,9 +136,9 @@ class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
           result.optimisticResponse.replace(
             serializers.deserialize(
                   value,
-                  specifiedType: const FullType(_i2.GQueryData),
+                  specifiedType: const FullType(_i2.GCompanyData),
                 )!
-                as _i2.GQueryData,
+                as _i2.GCompanyData,
           );
           break;
         case 'updateCacheHandlerKey':
@@ -183,18 +183,18 @@ class _$GQueryReqSerializer implements StructuredSerializer<GQueryReq> {
   }
 }
 
-class _$GQueryReq extends GQueryReq {
+class _$GCompanyReq extends GCompanyReq {
   @override
-  final _i3.GQueryVars vars;
+  final _i3.GCompanyVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GQueryData? Function(_i2.GQueryData?, _i2.GQueryData?)?
+  final _i2.GCompanyData? Function(_i2.GCompanyData?, _i2.GCompanyData?)?
   updateResult;
   @override
-  final _i2.GQueryData? optimisticResponse;
+  final _i2.GCompanyData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -206,10 +206,10 @@ class _$GQueryReq extends GQueryReq {
   @override
   final _i4.Context? context;
 
-  factory _$GQueryReq([void Function(GQueryReqBuilder)? updates]) =>
-      (GQueryReqBuilder()..update(updates))._build();
+  factory _$GCompanyReq([void Function(GCompanyReqBuilder)? updates]) =>
+      (GCompanyReqBuilder()..update(updates))._build();
 
-  _$GQueryReq._({
+  _$GCompanyReq._({
     required this.vars,
     required this.operation,
     this.requestId,
@@ -222,17 +222,17 @@ class _$GQueryReq extends GQueryReq {
     this.context,
   }) : super._();
   @override
-  GQueryReq rebuild(void Function(GQueryReqBuilder) updates) =>
+  GCompanyReq rebuild(void Function(GCompanyReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GQueryReqBuilder toBuilder() => GQueryReqBuilder()..replace(this);
+  GCompanyReqBuilder toBuilder() => GCompanyReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GQueryReq &&
+    return other is GCompanyReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -264,7 +264,7 @@ class _$GQueryReq extends GQueryReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GQueryReq')
+    return (newBuiltValueToStringHelper(r'GCompanyReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -279,12 +279,13 @@ class _$GQueryReq extends GQueryReq {
   }
 }
 
-class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
-  _$GQueryReq? _$v;
+class GCompanyReqBuilder implements Builder<GCompanyReq, GCompanyReqBuilder> {
+  _$GCompanyReq? _$v;
 
-  _i3.GQueryVarsBuilder? _vars;
-  _i3.GQueryVarsBuilder get vars => _$this._vars ??= _i3.GQueryVarsBuilder();
-  set vars(_i3.GQueryVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GCompanyVarsBuilder? _vars;
+  _i3.GCompanyVarsBuilder get vars =>
+      _$this._vars ??= _i3.GCompanyVarsBuilder();
+  set vars(_i3.GCompanyVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -294,17 +295,19 @@ class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GQueryData? Function(_i2.GQueryData?, _i2.GQueryData?)? _updateResult;
-  _i2.GQueryData? Function(_i2.GQueryData?, _i2.GQueryData?)?
+  _i2.GCompanyData? Function(_i2.GCompanyData?, _i2.GCompanyData?)?
+  _updateResult;
+  _i2.GCompanyData? Function(_i2.GCompanyData?, _i2.GCompanyData?)?
   get updateResult => _$this._updateResult;
   set updateResult(
-    _i2.GQueryData? Function(_i2.GQueryData?, _i2.GQueryData?)? updateResult,
+    _i2.GCompanyData? Function(_i2.GCompanyData?, _i2.GCompanyData?)?
+    updateResult,
   ) => _$this._updateResult = updateResult;
 
-  _i2.GQueryDataBuilder? _optimisticResponse;
-  _i2.GQueryDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= _i2.GQueryDataBuilder();
-  set optimisticResponse(_i2.GQueryDataBuilder? optimisticResponse) =>
+  _i2.GCompanyDataBuilder? _optimisticResponse;
+  _i2.GCompanyDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= _i2.GCompanyDataBuilder();
+  set optimisticResponse(_i2.GCompanyDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -333,11 +336,11 @@ class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
   _i4.Context? get context => _$this._context;
   set context(_i4.Context? context) => _$this._context = context;
 
-  GQueryReqBuilder() {
-    GQueryReq._initializeBuilder(this);
+  GCompanyReqBuilder() {
+    GCompanyReq._initializeBuilder(this);
   }
 
-  GQueryReqBuilder get _$this {
+  GCompanyReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -356,28 +359,28 @@ class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
   }
 
   @override
-  void replace(GQueryReq other) {
-    _$v = other as _$GQueryReq;
+  void replace(GCompanyReq other) {
+    _$v = other as _$GCompanyReq;
   }
 
   @override
-  void update(void Function(GQueryReqBuilder)? updates) {
+  void update(void Function(GCompanyReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GQueryReq build() => _build();
+  GCompanyReq build() => _build();
 
-  _$GQueryReq _build() {
-    _$GQueryReq _$result;
+  _$GCompanyReq _build() {
+    _$GCompanyReq _$result;
     try {
       _$result =
           _$v ??
-          _$GQueryReq._(
+          _$GCompanyReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
               operation,
-              r'GQueryReq',
+              r'GCompanyReq',
               'operation',
             ),
             requestId: requestId,
@@ -388,7 +391,7 @@ class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
             fetchPolicy: fetchPolicy,
             executeOnListen: BuiltValueNullFieldError.checkNotNull(
               executeOnListen,
-              r'GQueryReq',
+              r'GCompanyReq',
               'executeOnListen',
             ),
             context: context,
@@ -403,7 +406,7 @@ class GQueryReqBuilder implements Builder<GQueryReq, GQueryReqBuilder> {
         _optimisticResponse?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-          r'GQueryReq',
+          r'GCompanyReq',
           _$failedField,
           e.toString(),
         );

@@ -8,6 +8,7 @@ class DioClient {
       BaseOptions(
         baseUrl: AppConfig.apiUrl,
         headers: {'Content-Type': 'application/json'},
+        validateStatus: (status) => status != null && status < 500,
       ),
     );
     dio.interceptors.add(LogInterceptor(requestBody: true));

@@ -13,8 +13,12 @@ class CompanyRepositoryImpl implements CompanyRepository {
 
   @override
   Future<Company> getCompany() async {
-    final json = await remoteDataSource.fetchCompany();
-    final model = CompanyModel.fromJson(json);
-    return model; // already implements Company
+    try {
+      final json = await remoteDataSource.fetchCompany();
+      final model = CompanyModel.fromJson(json);
+      return model;
+    } catch (e) {
+      throw Exception('Failed to fetch company: $e');
+    }
   }
 }

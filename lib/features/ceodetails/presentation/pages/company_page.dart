@@ -45,6 +45,22 @@ class CompanyPage extends StatelessWidget {
                       'COO: ${company.coo}',
                       style: const TextStyle(fontSize: 16),
                     ),
+                    Text(
+                      'CTO-Propulsion: ${company.ctoPropulsion}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      'Total Employees: ${company.employees}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      'Founder: ${company.founder}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      'Founded: ${company.founded}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
                     const SizedBox(height: 16),
                     Text(
                       'Headquarters:',
@@ -56,6 +72,15 @@ class CompanyPage extends StatelessWidget {
                     Text('Address: ${company.headquarters.address}'),
                     Text('City: ${company.headquarters.city}'),
                     Text('State: ${company.headquarters.state}'),
+                    const SizedBox(height: 16),
+                    Text('Launch Sites:${company.launchSites}'),
+                    Text(
+                      'Company Summary: \n${company.summary}',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    Text('Test Sites:${company.testSites}'),
+                    Text('Valuation in USD:${company.valuation}'),
+                    Text('Vehicles:${company.vehicles}'),
                     const SizedBox(height: 16),
                     Text(
                       'Links:',

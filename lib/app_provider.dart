@@ -8,10 +8,9 @@ class AppProvider extends StatelessWidget {
   const AppProvider({super.key});
   @override
   Widget build(context) {
+    final comCubit = dep<CompanyCubit>()..fetchCompany();
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => dep<CompanyCubit>()..fetchCompany()),
-      ],
+      providers: [BlocProvider.value(value: comCubit)],
       child: const SpaceX(),
     );
   }

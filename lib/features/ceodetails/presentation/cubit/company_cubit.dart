@@ -19,7 +19,7 @@ class CompanyError extends CompanyState {
 }
 
 class CompanyCubit extends Cubit<CompanyState> {
-  final CompanyRepositoryImpl repository;
+  final CompanyRepository repository;
   CompanyCubit(this.repository) : super(CompanyInitial());
 
   Future<void> fetchCompany() async {

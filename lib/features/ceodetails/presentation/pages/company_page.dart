@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -6,6 +7,7 @@ import 'package:graphbitcoin/core/services/graphql_service.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/repository/company_repo_impl.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
 
+@RoutePage()
 class CompanyPage extends StatelessWidget {
   const CompanyPage({super.key});
 

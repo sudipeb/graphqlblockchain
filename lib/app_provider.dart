@@ -5,7 +5,7 @@ import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubi
 import 'package:graphbitcoin/space_x.dart';
 
 class AppProvider extends StatelessWidget {
-  AppProvider({super.key});
+  const AppProvider({super.key});
   @override
   Widget build(context) {
     return MultiBlocProvider(

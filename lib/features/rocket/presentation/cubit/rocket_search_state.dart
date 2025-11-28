@@ -1,5 +1,6 @@
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 
+///state for rocket search
 abstract class RocketSearchState {}
 
 class RocketSearchInitial extends RocketSearchState {}

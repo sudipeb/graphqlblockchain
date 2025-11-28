@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 import 'package:graphbitcoin/features/rocket/domain/repository/rocket_repo_impl.dart';
 
+///[Cubit] for managing the rocket data fetching state
 abstract class RocketState {}
 
 class RocketInitial extends RocketState {}

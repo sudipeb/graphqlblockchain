@@ -2,10 +2,13 @@ import 'package:graphbitcoin/features/rocket/data/datasources/rocket_remote_data
 import 'package:graphbitcoin/features/rocket/data/models/rocket_model.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 
+/// Abstract class defining the history repository
 abstract class RocketRepository {
   Future<List<Rocket>> getRockets();
 }
 
+/// Implementation of the [RocketRepository]
+/// Uses a [RocketRemoteDataSource] to fetch companyn history data and converts it to a history entity
 class RocketRepositoryImpl extends RocketRepository {
   final RocketRemoteDataSource rocketRemoteDataSource;
 
@@ -24,6 +27,7 @@ class RocketRepositoryImpl extends RocketRepository {
     }
   }
 
+  /// Converts a [RocketModel] into a Rocket entity
   Rocket _mapRocketModelToEntity(RocketModel model) {
     return Rocket(
       id: model.id,

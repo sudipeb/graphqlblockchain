@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 
+///[Cubit] for managing the Rocket search state
 abstract class RocketSearchState {}
 
 class RocketSearchInitial extends RocketSearchState {}

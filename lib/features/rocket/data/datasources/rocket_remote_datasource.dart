@@ -2,6 +2,7 @@ import 'package:graphbitcoin/core/services/graphql_service.dart';
 import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.data.gql.dart';
 import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.req.gql.dart';
 
+///abstract class to fetch the rocket
 abstract class RocketRemoteDataSource {
   Future<List<Map<String, dynamic>>> fetchRockets();
 }
@@ -15,41 +16,27 @@ class RocketRemoteDataSourceImpl implements RocketRemoteDataSource {
   Future<List<Map<String, dynamic>>> fetchRockets() async {
     try {
       final request = GRocketsReq();
-      print('🚀 Sending GraphQL Rockets request...');
-      print('📋 Request operation: ${request.operation.operationName}');
 
       final response = await graphqlService.client.request(request).first;
 
-      print('✅ GraphQL Response received');
-      print('📊 Response data: ${response.data}');
-
       // Check if response has data at all
       if (response.data == null) {
-        print('❌ response.data is NULL - GraphQL query failed');
         throw Exception(
           'Response data is null - GraphQL query may have failed',
         );
       }
 
       // Get the rockets array directly
-      print('🔍 Accessing rockets from response.data');
+
       final rocketsData = response.data!.rockets;
 
-      print('🔍 rocketsData: $rocketsData');
-      print('🔍 rocketsData is null: ${rocketsData == null}');
-      print('🔍 rocketsData is empty: ${rocketsData?.isEmpty}');
-
       if (rocketsData == null) {
-        print('❌ rocketsData is NULL');
         throw Exception('Rockets field is null in GraphQL response');
       }
 
       if (rocketsData.isEmpty) {
-        print('⚠️ Rockets list is empty - no records returned');
         return [];
       }
-
-      print('✅ Found ${rocketsData.length} rockets');
 
       // Convert each rocket object to a Map
       final result = rocketsData
@@ -57,15 +44,13 @@ class RocketRemoteDataSourceImpl implements RocketRemoteDataSource {
           .map((rocket) => _convertToMap(rocket!))
           .toList();
 
-      print('✅ Successfully converted ${result.length} rockets to maps');
       return result;
     } catch (e) {
-      print('❌ Error fetching rockets: $e');
-      print('📍 Stack trace: ${StackTrace.current}');
       throw Exception('Failed to fetch rockets: $e');
     }
   }
 
+  /// Converts GraphQL rocekt data object to a simple Map
   Map<String, dynamic> _convertToMap(GRocketsData_rockets rocket) {
     return {
       'id': rocket.id ?? '',

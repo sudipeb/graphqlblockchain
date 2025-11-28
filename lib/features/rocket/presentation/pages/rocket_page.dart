@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
+import 'package:graphbitcoin/router/app_router.dart';
 
 @RoutePage()
 class RocketPage extends StatefulWidget {
@@ -36,7 +37,27 @@ class _RocketPageState extends State<RocketPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(10),
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blueGrey),
+              child: Text("Menu"),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('History'),
+              onTap: () => context.router.push(HistoryRoute()),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Details'),
+              onTap: () => context.router.push(CompanyRoute()),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(title: const Text('SpaceX Rockets')),
       body: BlocBuilder<RocketCubit, RocketState>(
         builder: (context, rocketState) {

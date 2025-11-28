@@ -17,8 +17,8 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
       final request =
           GHistoriesReq(); // Make sure this matches your generated request
       final response = await graphqlService.client.request(request).first;
-
       final historiesData = response.data?.histories;
+      print('historydata:$historiesData');
       if (historiesData == null || historiesData.isEmpty) {
         throw Exception('No histories data received from GraphQL');
       }
@@ -35,11 +35,13 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
 
   Map<String, dynamic> _convertToMap(GHistoriesData_histories history) {
     return {
-      'id': history.id ?? '',
+      'id': history.id ?? 0, // make sure id is int
       'title': history.title ?? '',
       'details': history.details ?? '',
-      'eventDateUnix': history.event_date_unix ?? 0,
-      'eventDateUtc': history.event_date_utc ?? '',
+      'links': {
+        // nested map
+        'article': history.links?.article ?? '',
+      },
     };
   }
 }

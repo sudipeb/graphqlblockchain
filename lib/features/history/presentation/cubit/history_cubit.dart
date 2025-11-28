@@ -1,15 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/history/domain/entity/history.dart';
+import 'package:graphbitcoin/features/history/domain/repository/history_repo_impl.dart';
 
 abstract class HistoryState {}
 
-class HistoryLoading extends HistoryState {}
-
 class HistoryInitial extends HistoryState {}
 
+class HistoryLoading extends HistoryState {}
+
 class HistoryLoaded extends HistoryState {
-  final History history;
-  HistoryLoaded(this.history);
+  final List<History> histories;
+  HistoryLoaded(this.histories);
 }
 
 class HistoryError extends HistoryState {
@@ -21,11 +22,12 @@ class HistoryCubit extends Cubit<HistoryState> {
   final HistoryRepository repository;
   HistoryCubit(this.repository) : super(HistoryInitial());
 
-  Future<void> FetchHistory() async {
+  Future<void> fetchHistories() async {
     emit(HistoryLoading());
     try {
-      final history = await repository.getHistory();
-      emit(HistoryLoaded(history));
+      final histories = await repository
+          .getHistories(); // returns List<History>
+      emit(HistoryLoaded(histories));
     } catch (e) {
       emit(HistoryError(e.toString()));
     }

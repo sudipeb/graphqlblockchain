@@ -14,16 +14,20 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
   @override
   Future<List<Map<String, dynamic>>> fetchHistories() async {
     try {
-      final request = GHistoriesReq();
+      final request =
+          GHistoriesReq(); // Make sure this matches your generated request
       final response = await graphqlService.client.request(request).first;
 
       final historiesData = response.data?.histories;
-      if (historiesData == null) {
+      if (historiesData == null || historiesData.isEmpty) {
         throw Exception('No histories data received from GraphQL');
       }
 
       // Convert each history object to a Map
-      return historiesData.map((history) => _convertToMap(history!)).toList();
+      return historiesData
+          .where((history) => history != null)
+          .map((history) => _convertToMap(history!))
+          .toList();
     } catch (e) {
       throw Exception('Failed to fetch histories: $e');
     }

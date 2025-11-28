@@ -10,7 +10,7 @@ abstract class HistoryModel with _$HistoryModel implements History {
     required String details,
     required String title,
     required LinksModel links,
-    required int id,
+    required String id,
   }) = _HistoryModel;
 
   factory HistoryModel.fromJson(Map<String, dynamic> json) =>

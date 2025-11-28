@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HistoryModel {
 
- String get details; String get title; LinksModel get links; int get id;
+ String get details; String get title; LinksModel get links; String get id;
 /// Create a copy of HistoryModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $HistoryModelCopyWith<$Res>  {
   factory $HistoryModelCopyWith(HistoryModel value, $Res Function(HistoryModel) _then) = _$HistoryModelCopyWithImpl;
 @useResult
 $Res call({
- String details, String title, LinksModel links, int id
+ String details, String title, LinksModel links, String id
 });
 
 
@@ -71,7 +71,7 @@ details: null == details ? _self.details : details // ignore: cast_nullable_to_n
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,links: null == links ? _self.links : links // ignore: cast_nullable_to_non_nullable
 as LinksModel,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,
+as String,
   ));
 }
 /// Create a copy of HistoryModel
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String details,  String title,  LinksModel links,  int id)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String details,  String title,  LinksModel links,  String id)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HistoryModel() when $default != null:
 return $default(_that.details,_that.title,_that.links,_that.id);case _:
@@ -186,7 +186,7 @@ return $default(_that.details,_that.title,_that.links,_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String details,  String title,  LinksModel links,  int id)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String details,  String title,  LinksModel links,  String id)  $default,) {final _that = this;
 switch (_that) {
 case _HistoryModel():
 return $default(_that.details,_that.title,_that.links,_that.id);case _:
@@ -206,7 +206,7 @@ return $default(_that.details,_that.title,_that.links,_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String details,  String title,  LinksModel links,  int id)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String details,  String title,  LinksModel links,  String id)?  $default,) {final _that = this;
 switch (_that) {
 case _HistoryModel() when $default != null:
 return $default(_that.details,_that.title,_that.links,_that.id);case _:
@@ -227,7 +227,7 @@ class _HistoryModel implements HistoryModel {
 @override final  String details;
 @override final  String title;
 @override final  LinksModel links;
-@override final  int id;
+@override final  String id;
 
 /// Create a copy of HistoryModel
 /// with the given fields replaced by the non-null parameter values.
@@ -262,7 +262,7 @@ abstract mixin class _$HistoryModelCopyWith<$Res> implements $HistoryModelCopyWi
   factory _$HistoryModelCopyWith(_HistoryModel value, $Res Function(_HistoryModel) _then) = __$HistoryModelCopyWithImpl;
 @override @useResult
 $Res call({
- String details, String title, LinksModel links, int id
+ String details, String title, LinksModel links, String id
 });
 
 
@@ -285,7 +285,7 @@ details: null == details ? _self.details : details // ignore: cast_nullable_to_n
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,links: null == links ? _self.links : links // ignore: cast_nullable_to_non_nullable
 as LinksModel,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,
+as String,
   ));
 }
 

@@ -43,14 +43,8 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
   }
 
   Map<String, dynamic> _convertToMap(GHistoriesData_histories history) {
-    // Convert String id to int if needed
-    int historyId = 0;
-    if (history.id != null) {
-      historyId = int.tryParse(history.id!) ?? 0;
-    }
-
     return {
-      'id': historyId,
+      'id': history.id,
       'title': history.title ?? '',
       'details': history.details ?? '',
       'links': {'article': history.links?.article ?? ''},

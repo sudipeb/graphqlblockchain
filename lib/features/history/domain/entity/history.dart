@@ -4,7 +4,7 @@ class History {
   final String details;
   final String title;
   final HistoryLinks links;
-  final int id;
+  final String id;
   History({
     required this.details,
     required this.title,

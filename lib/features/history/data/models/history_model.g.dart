@@ -11,7 +11,7 @@ _HistoryModel _$HistoryModelFromJson(Map<String, dynamic> json) =>
       details: json['details'] as String,
       title: json['title'] as String,
       links: LinksModel.fromJson(json['links'] as Map<String, dynamic>),
-      id: (json['id'] as num).toInt(),
+      id: json['id'] as String,
     );
 
 Map<String, dynamic> _$HistoryModelToJson(_HistoryModel instance) =>

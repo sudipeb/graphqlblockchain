@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/pages/company_page.dart';
 import 'package:graphbitcoin/features/history/presentation/pages/history_page.dart';
+import 'package:graphbitcoin/features/rocket/presentation/pages/rocket_page.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig()
@@ -15,6 +16,7 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(page: CompanyRoute.page),
-    AutoRoute(page: HistoryRoute.page, initial: true),
+    AutoRoute(page: HistoryRoute.page),
+    AutoRoute(page: RocketRoute.page, initial: true),
   ];
 }

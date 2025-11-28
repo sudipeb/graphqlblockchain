@@ -57,6 +57,29 @@ import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_
     show GHistoriesReq;
 import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.var.gql.dart'
     show GHistoriesVars;
+import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.data.gql.dart'
+    show
+        GRocketsData,
+        GRocketsData_rockets,
+        GRocketsData_rockets_diameter,
+        GRocketsData_rockets_engines,
+        GRocketsData_rockets_engines_thrust_sea_level,
+        GRocketsData_rockets_engines_thrust_vacuum,
+        GRocketsData_rockets_first_stage,
+        GRocketsData_rockets_height,
+        GRocketsData_rockets_landing_legs,
+        GRocketsData_rockets_mass,
+        GRocketsData_rockets_payload_weights,
+        GRocketsData_rockets_second_stage,
+        GRocketsData_rockets_second_stage_payloads,
+        GRocketsData_rockets_second_stage_payloads_composite_fairing,
+        GRocketsData_rockets_second_stage_payloads_composite_fairing_diameter,
+        GRocketsData_rockets_second_stage_payloads_composite_fairing_height,
+        GRocketsData_rockets_second_stage_thrust;
+import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.req.gql.dart'
+    show GRocketsReq;
+import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.var.gql.dart'
+    show GRocketsVars;
 
 part 'serializers.gql.g.dart';
 
@@ -83,6 +106,25 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GMissionsFind,
   GObjectID,
   GPayloadsFind,
+  GRocketsData,
+  GRocketsData_rockets,
+  GRocketsData_rockets_diameter,
+  GRocketsData_rockets_engines,
+  GRocketsData_rockets_engines_thrust_sea_level,
+  GRocketsData_rockets_engines_thrust_vacuum,
+  GRocketsData_rockets_first_stage,
+  GRocketsData_rockets_height,
+  GRocketsData_rockets_landing_legs,
+  GRocketsData_rockets_mass,
+  GRocketsData_rockets_payload_weights,
+  GRocketsData_rockets_second_stage,
+  GRocketsData_rockets_second_stage_payloads,
+  GRocketsData_rockets_second_stage_payloads_composite_fairing,
+  GRocketsData_rockets_second_stage_payloads_composite_fairing_diameter,
+  GRocketsData_rockets_second_stage_payloads_composite_fairing_height,
+  GRocketsData_rockets_second_stage_thrust,
+  GRocketsReq,
+  GRocketsVars,
   GShipsFind,
   GString_comparison_exp,
   Gconflict_action,

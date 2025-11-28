@@ -7,6 +7,10 @@ import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubi
 import 'package:graphbitcoin/features/history/data/datasource/history_remote_datasource.dart';
 import 'package:graphbitcoin/features/history/domain/repository/history_repo_impl.dart';
 import 'package:graphbitcoin/features/history/presentation/cubit/history_cubit.dart';
+import 'package:graphbitcoin/features/rocket/data/datasources/rocket_remote_datasource.dart';
+import 'package:graphbitcoin/features/rocket/domain/repository/rocket_repo_impl.dart';
+import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
+import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
 
 final GetIt dep = GetIt.instance;
 
@@ -22,6 +26,9 @@ void setupDependencies() {
   dep.registerSingleton<HistoryRemoteDataSource>(
     HistoryRemoteDataSourceImpl(graphqlService: dep<GraphQLService>()),
   );
+  dep.registerSingleton<RocketRemoteDataSource>(
+    RocketRemoteDataSourceImpl(graphqlService: dep<GraphQLService>()),
+  );
 
   // Repositories
   dep.registerSingleton<CompanyRepository>(
@@ -30,8 +37,13 @@ void setupDependencies() {
   dep.registerSingleton<HistoryRepository>(
     HistoryRepositoryImpl(dep<HistoryRemoteDataSource>()),
   );
+  dep.registerSingleton<RocketRepository>(
+    RocketRepositoryImpl(dep<RocketRemoteDataSource>()),
+  );
 
   // Cubits
   dep.registerFactory(() => CompanyCubit(dep<CompanyRepository>()));
   dep.registerFactory(() => HistoryCubit(dep<HistoryRepository>()));
+  dep.registerFactory(() => RocketCubit(dep<RocketRepository>()));
+  dep.registerFactory(() => RocketSearchCubit());
 }

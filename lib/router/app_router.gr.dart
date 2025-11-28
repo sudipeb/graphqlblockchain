@@ -41,3 +41,19 @@ class HistoryRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [RocketPage]
+class RocketRoute extends PageRouteInfo<void> {
+  const RocketRoute({List<PageRouteInfo>? children})
+    : super(RocketRoute.name, initialChildren: children);
+
+  static const String name = 'RocketRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RocketPage();
+    },
+  );
+}

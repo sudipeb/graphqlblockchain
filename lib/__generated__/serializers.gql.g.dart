@@ -28,6 +28,34 @@ Serializers _$serializers =
           ..add(GMissionsFind.serializer)
           ..add(GObjectID.serializer)
           ..add(GPayloadsFind.serializer)
+          ..add(GRocketsData.serializer)
+          ..add(GRocketsData_rockets.serializer)
+          ..add(GRocketsData_rockets_diameter.serializer)
+          ..add(GRocketsData_rockets_engines.serializer)
+          ..add(GRocketsData_rockets_engines_thrust_sea_level.serializer)
+          ..add(GRocketsData_rockets_engines_thrust_vacuum.serializer)
+          ..add(GRocketsData_rockets_first_stage.serializer)
+          ..add(GRocketsData_rockets_height.serializer)
+          ..add(GRocketsData_rockets_landing_legs.serializer)
+          ..add(GRocketsData_rockets_mass.serializer)
+          ..add(GRocketsData_rockets_payload_weights.serializer)
+          ..add(GRocketsData_rockets_second_stage.serializer)
+          ..add(GRocketsData_rockets_second_stage_payloads.serializer)
+          ..add(
+            GRocketsData_rockets_second_stage_payloads_composite_fairing
+                .serializer,
+          )
+          ..add(
+            GRocketsData_rockets_second_stage_payloads_composite_fairing_diameter
+                .serializer,
+          )
+          ..add(
+            GRocketsData_rockets_second_stage_payloads_composite_fairing_height
+                .serializer,
+          )
+          ..add(GRocketsData_rockets_second_stage_thrust.serializer)
+          ..add(GRocketsReq.serializer)
+          ..add(GRocketsVars.serializer)
           ..add(GShipsFind.serializer)
           ..add(GString_comparison_exp.serializer)
           ..add(Gconflict_action.serializer)
@@ -90,6 +118,18 @@ Serializers _$serializers =
               const FullType.nullable(GHistoriesData_histories),
             ]),
             () => ListBuilder<GHistoriesData_histories?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType.nullable(GRocketsData_rockets),
+            ]),
+            () => ListBuilder<GRocketsData_rockets?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType.nullable(GRocketsData_rockets_payload_weights),
+            ]),
+            () => ListBuilder<GRocketsData_rockets_payload_weights?>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [

@@ -2,6 +2,7 @@ import 'package:graphbitcoin/core/services/graphql_service.dart';
 import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.data.gql.dart';
 import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.req.gql.dart';
 
+///abstract class to fetch the company histories
 abstract class HistoryRemoteDataSource {
   Future<List<Map<String, dynamic>>> fetchHistories();
 }
@@ -42,6 +43,7 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
     }
   }
 
+  /// Converts GraphQL company data object to a simple Map
   Map<String, dynamic> _convertToMap(GHistoriesData_histories history) {
     return {
       'id': history.id,

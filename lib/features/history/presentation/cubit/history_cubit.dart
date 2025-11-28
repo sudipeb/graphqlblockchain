@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/history/domain/entity/history.dart';
 import 'package:graphbitcoin/features/history/domain/repository/history_repo_impl.dart';
 
+///[Cubit] for handling the History
 abstract class HistoryState {}
 
 class HistoryInitial extends HistoryState {}

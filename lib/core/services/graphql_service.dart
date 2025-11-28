@@ -4,9 +4,8 @@ import 'package:graphbitcoin/core/config/app_config.dart';
 import 'package:graphbitcoin/core/network/dio_client.dart';
 
 /// Initializes the Ferry client with Dio HTTP link
-/// [link] manages request/response flow
+/// [Link] manages request/response flow
 /// create the Ferry [client] with link and cache
-///
 
 class GraphQLService {
   late final Client client;

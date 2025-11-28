@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/entity/company_entity.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/repository/company_repo_impl.dart';
 
+///[Cubit] to manage the states for Company
 abstract class CompanyState {}
 
 class CompanyInitial extends CompanyState {}

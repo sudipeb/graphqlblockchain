@@ -48,6 +48,15 @@ import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_compa
     show GCompanyReq;
 import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.var.gql.dart'
     show GCompanyVars;
+import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.data.gql.dart'
+    show
+        GHistoriesData,
+        GHistoriesData_histories,
+        GHistoriesData_histories_links;
+import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.req.gql.dart'
+    show GHistoriesReq;
+import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.var.gql.dart'
+    show GHistoriesVars;
 
 part 'serializers.gql.g.dart';
 
@@ -64,6 +73,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GCompanyVars,
   GCoresFind,
   GDate,
+  GHistoriesData,
+  GHistoriesData_histories,
+  GHistoriesData_histories_links,
+  GHistoriesReq,
+  GHistoriesVars,
   GHistoryFind,
   GLaunchFind,
   GMissionsFind,

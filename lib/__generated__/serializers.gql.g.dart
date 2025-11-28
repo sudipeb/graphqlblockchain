@@ -18,6 +18,11 @@ Serializers _$serializers =
           ..add(GCompanyVars.serializer)
           ..add(GCoresFind.serializer)
           ..add(GDate.serializer)
+          ..add(GHistoriesData.serializer)
+          ..add(GHistoriesData_histories.serializer)
+          ..add(GHistoriesData_histories_links.serializer)
+          ..add(GHistoriesReq.serializer)
+          ..add(GHistoriesVars.serializer)
           ..add(GHistoryFind.serializer)
           ..add(GLaunchFind.serializer)
           ..add(GMissionsFind.serializer)
@@ -79,6 +84,12 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType.nullable(GHistoriesData_histories),
+            ]),
+            () => ListBuilder<GHistoriesData_histories?>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [

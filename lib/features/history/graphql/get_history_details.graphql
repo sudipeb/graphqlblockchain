@@ -1,0 +1,12 @@
+query Histories {
+  histories {
+    details
+    event_date_unix
+    event_date_utc
+    id
+    title
+    links {
+      article
+    }
+  }
+}

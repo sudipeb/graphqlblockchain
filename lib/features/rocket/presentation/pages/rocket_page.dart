@@ -39,19 +39,21 @@ class _RocketPageState extends State<RocketPage> {
     return Scaffold(
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.all(10),
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.blueGrey),
-              child: Text("Menu"),
+              child: Text(
+                "Menu",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: Icon(Icons.history),
               title: Text('History'),
               onTap: () => context.router.push(HistoryRoute()),
             ),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.details),
               title: Text('Details'),
               onTap: () => context.router.push(CompanyRoute()),
             ),

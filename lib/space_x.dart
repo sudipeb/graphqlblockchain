@@ -6,6 +6,7 @@ class SpaceX extends StatelessWidget {
   @override
   Widget build(context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.instance.config(),
       theme: ThemeData.light(useMaterial3: true),
     );

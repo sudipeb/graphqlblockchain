@@ -1,4 +1,4 @@
-class Links {
+class HistoryLinks {
   final String article;
-  Links({required this.article});
+  HistoryLinks({required this.article});
 }

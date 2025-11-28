@@ -115,36 +115,6 @@ class _$GHistoriesData_historiesSerializer
       ),
     ];
     Object? value;
-    value = object.details;
-    if (value != null) {
-      result
-        ..add('details')
-        ..add(
-          serializers.serialize(value, specifiedType: const FullType(String)),
-        );
-    }
-    value = object.event_date_unix;
-    if (value != null) {
-      result
-        ..add('event_date_unix')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(_i2.GDate),
-          ),
-        );
-    }
-    value = object.event_date_utc;
-    if (value != null) {
-      result
-        ..add('event_date_utc')
-        ..add(
-          serializers.serialize(
-            value,
-            specifiedType: const FullType(_i2.GDate),
-          ),
-        );
-    }
     value = object.id;
     if (value != null) {
       result
@@ -157,6 +127,14 @@ class _$GHistoriesData_historiesSerializer
     if (value != null) {
       result
         ..add('title')
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
+    }
+    value = object.details;
+    if (value != null) {
+      result
+        ..add('details')
         ..add(
           serializers.serialize(value, specifiedType: const FullType(String)),
         );
@@ -197,32 +175,6 @@ class _$GHistoriesData_historiesSerializer
                   )!
                   as String;
           break;
-        case 'details':
-          result.details =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String?;
-          break;
-        case 'event_date_unix':
-          result.event_date_unix.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GDate),
-                )!
-                as _i2.GDate,
-          );
-          break;
-        case 'event_date_utc':
-          result.event_date_utc.replace(
-            serializers.deserialize(
-                  value,
-                  specifiedType: const FullType(_i2.GDate),
-                )!
-                as _i2.GDate,
-          );
-          break;
         case 'id':
           result.id =
               serializers.deserialize(
@@ -233,6 +185,14 @@ class _$GHistoriesData_historiesSerializer
           break;
         case 'title':
           result.title =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
+          break;
+        case 'details':
+          result.details =
               serializers.deserialize(
                     value,
                     specifiedType: const FullType(String),
@@ -447,15 +407,11 @@ class _$GHistoriesData_histories extends GHistoriesData_histories {
   @override
   final String G__typename;
   @override
-  final String? details;
-  @override
-  final _i2.GDate? event_date_unix;
-  @override
-  final _i2.GDate? event_date_utc;
-  @override
   final String? id;
   @override
   final String? title;
+  @override
+  final String? details;
   @override
   final GHistoriesData_histories_links? links;
 
@@ -465,11 +421,9 @@ class _$GHistoriesData_histories extends GHistoriesData_histories {
 
   _$GHistoriesData_histories._({
     required this.G__typename,
-    this.details,
-    this.event_date_unix,
-    this.event_date_utc,
     this.id,
     this.title,
+    this.details,
     this.links,
   }) : super._();
   @override
@@ -486,11 +440,9 @@ class _$GHistoriesData_histories extends GHistoriesData_histories {
     if (identical(other, this)) return true;
     return other is GHistoriesData_histories &&
         G__typename == other.G__typename &&
-        details == other.details &&
-        event_date_unix == other.event_date_unix &&
-        event_date_utc == other.event_date_utc &&
         id == other.id &&
         title == other.title &&
+        details == other.details &&
         links == other.links;
   }
 
@@ -498,11 +450,9 @@ class _$GHistoriesData_histories extends GHistoriesData_histories {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
-    _$hash = $jc(_$hash, details.hashCode);
-    _$hash = $jc(_$hash, event_date_unix.hashCode);
-    _$hash = $jc(_$hash, event_date_utc.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, details.hashCode);
     _$hash = $jc(_$hash, links.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -512,11 +462,9 @@ class _$GHistoriesData_histories extends GHistoriesData_histories {
   String toString() {
     return (newBuiltValueToStringHelper(r'GHistoriesData_histories')
           ..add('G__typename', G__typename)
-          ..add('details', details)
-          ..add('event_date_unix', event_date_unix)
-          ..add('event_date_utc', event_date_utc)
           ..add('id', id)
           ..add('title', title)
+          ..add('details', details)
           ..add('links', links))
         .toString();
   }
@@ -531,22 +479,6 @@ class GHistoriesData_historiesBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  String? _details;
-  String? get details => _$this._details;
-  set details(String? details) => _$this._details = details;
-
-  _i2.GDateBuilder? _event_date_unix;
-  _i2.GDateBuilder get event_date_unix =>
-      _$this._event_date_unix ??= _i2.GDateBuilder();
-  set event_date_unix(_i2.GDateBuilder? event_date_unix) =>
-      _$this._event_date_unix = event_date_unix;
-
-  _i2.GDateBuilder? _event_date_utc;
-  _i2.GDateBuilder get event_date_utc =>
-      _$this._event_date_utc ??= _i2.GDateBuilder();
-  set event_date_utc(_i2.GDateBuilder? event_date_utc) =>
-      _$this._event_date_utc = event_date_utc;
-
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -554,6 +486,10 @@ class GHistoriesData_historiesBuilder
   String? _title;
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
+
+  String? _details;
+  String? get details => _$this._details;
+  set details(String? details) => _$this._details = details;
 
   GHistoriesData_histories_linksBuilder? _links;
   GHistoriesData_histories_linksBuilder get links =>
@@ -569,11 +505,9 @@ class GHistoriesData_historiesBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _details = $v.details;
-      _event_date_unix = $v.event_date_unix?.toBuilder();
-      _event_date_utc = $v.event_date_utc?.toBuilder();
       _id = $v.id;
       _title = $v.title;
+      _details = $v.details;
       _links = $v.links?.toBuilder();
       _$v = null;
     }
@@ -604,21 +538,14 @@ class GHistoriesData_historiesBuilder
               r'GHistoriesData_histories',
               'G__typename',
             ),
-            details: details,
-            event_date_unix: _event_date_unix?.build(),
-            event_date_utc: _event_date_utc?.build(),
             id: id,
             title: title,
+            details: details,
             links: _links?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'event_date_unix';
-        _event_date_unix?.build();
-        _$failedField = 'event_date_utc';
-        _event_date_utc?.build();
-
         _$failedField = 'links';
         _links?.build();
       } catch (e) {

@@ -5,7 +5,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:graphbitcoin/__generated__/schema.schema.gql.dart' as _i2;
 import 'package:graphbitcoin/__generated__/serializers.gql.dart' as _i1;
 
 part 'get_history_details.data.gql.g.dart';
@@ -52,11 +51,9 @@ abstract class GHistoriesData_histories
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String? get details;
-  _i2.GDate? get event_date_unix;
-  _i2.GDate? get event_date_utc;
   String? get id;
   String? get title;
+  String? get details;
   GHistoriesData_histories_links? get links;
   static Serializer<GHistoriesData_histories> get serializer =>
       _$gHistoriesDataHistoriesSerializer;

@@ -13,30 +13,14 @@ const Histories = _i1.OperationDefinitionNode(
     _i1.FieldNode(
       name: _i1.NameNode(value: 'histories'),
       alias: null,
-      arguments: [],
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'limit'),
+          value: _i1.IntValueNode(value: '10'),
+        )
+      ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'details'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'event_date_unix'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'event_date_utc'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
         _i1.FieldNode(
           name: _i1.NameNode(value: 'id'),
           alias: null,
@@ -46,6 +30,13 @@ const Histories = _i1.OperationDefinitionNode(
         ),
         _i1.FieldNode(
           name: _i1.NameNode(value: 'title'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'details'),
           alias: null,
           arguments: [],
           directives: [],

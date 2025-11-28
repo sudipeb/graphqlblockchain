@@ -14,34 +14,46 @@ class HistoryRemoteDataSourceImpl implements HistoryRemoteDataSource {
   @override
   Future<List<Map<String, dynamic>>> fetchHistories() async {
     try {
-      final request =
-          GHistoriesReq(); // Make sure this matches your generated request
+      final request = GHistoriesReq();
       final response = await graphqlService.client.request(request).first;
-      final historiesData = response.data?.histories;
-      print('historydata:$historiesData');
-      if (historiesData == null || historiesData.isEmpty) {
-        throw Exception('No histories data received from GraphQL');
+      if (response.data == null) {
+        throw Exception(
+          'Response data is null - GraphQL query may have failed',
+        );
+      }
+      final historiesData = response.data!.histories;
+
+      if (historiesData == null) {
+        throw Exception('Histories field is null in GraphQL response');
       }
 
+      if (historiesData.isEmpty) {
+        return [];
+      }
       // Convert each history object to a Map
-      return historiesData
+      final result = historiesData
           .where((history) => history != null)
           .map((history) => _convertToMap(history!))
           .toList();
+
+      return result;
     } catch (e) {
       throw Exception('Failed to fetch histories: $e');
     }
   }
 
   Map<String, dynamic> _convertToMap(GHistoriesData_histories history) {
+    // Convert String id to int if needed
+    int historyId = 0;
+    if (history.id != null) {
+      historyId = int.tryParse(history.id!) ?? 0;
+    }
+
     return {
-      'id': history.id ?? 0, // make sure id is int
+      'id': historyId,
       'title': history.title ?? '',
       'details': history.details ?? '',
-      'links': {
-        // nested map
-        'article': history.links?.article ?? '',
-      },
+      'links': {'article': history.links?.article ?? ''},
     };
   }
 }

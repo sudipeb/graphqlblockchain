@@ -20,3 +20,4 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: RocketRoute.page, initial: true),
   ];
 }
+ 

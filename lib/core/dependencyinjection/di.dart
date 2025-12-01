@@ -12,38 +12,38 @@ import 'package:graphbitcoin/features/rocket/domain/repository/rocket_repo_impl.
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
 
-final GetIt dep = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
 void setupDependencies() {
   // Services
-  dep.registerSingleton<DioClient>(DioClient());
-  dep.registerSingleton<GraphQLService>(GraphQLService());
+  getIt.registerSingleton<DioClient>(DioClient());
+  getIt.registerSingleton<GraphQLService>(GraphQLService());
 
   // Data sources
-  dep.registerSingleton<CompanyRemoteDataSource>(
-    CompanyRemoteDataSourceImpl(graphqlService: dep<GraphQLService>()),
+  getIt.registerSingleton<CompanyRemoteDataSource>(
+    CompanyRemoteDataSourceImpl(graphqlService: getIt<GraphQLService>()),
   );
-  dep.registerSingleton<HistoryRemoteDataSource>(
-    HistoryRemoteDataSourceImpl(graphqlService: dep<GraphQLService>()),
+  getIt.registerSingleton<HistoryRemoteDataSource>(
+    HistoryRemoteDataSourceImpl(graphqlService: getIt<GraphQLService>()),
   );
-  dep.registerSingleton<RocketRemoteDataSource>(
-    RocketRemoteDataSourceImpl(graphqlService: dep<GraphQLService>()),
+  getIt.registerSingleton<RocketRemoteDataSource>(
+    RocketRemoteDataSourceImpl(graphqlService: getIt<GraphQLService>()),
   );
 
   // Repositories
-  dep.registerSingleton<CompanyRepository>(
-    CompanyRepositoryImpl(remoteDataSource: dep<CompanyRemoteDataSource>()),
+  getIt.registerSingleton<CompanyRepository>(
+    CompanyRepositoryImpl(remoteDataSource: getIt<CompanyRemoteDataSource>()),
   );
-  dep.registerSingleton<HistoryRepository>(
-    HistoryRepositoryImpl(dep<HistoryRemoteDataSource>()),
+  getIt.registerSingleton<HistoryRepository>(
+    HistoryRepositoryImpl(getIt<HistoryRemoteDataSource>()),
   );
-  dep.registerSingleton<RocketRepository>(
-    RocketRepositoryImpl(dep<RocketRemoteDataSource>()),
+  getIt.registerSingleton<RocketRepository>(
+    RocketRepositoryImpl(getIt<RocketRemoteDataSource>()),
   );
 
   // Cubits
-  dep.registerFactory(() => CompanyCubit(dep<CompanyRepository>()));
-  dep.registerFactory(() => HistoryCubit(dep<HistoryRepository>()));
-  dep.registerFactory(() => RocketCubit(dep<RocketRepository>()));
-  dep.registerFactory(() => RocketSearchCubit());
+  getIt.registerFactory(() => CompanyCubit(getIt<CompanyRepository>()));
+  getIt.registerFactory(() => HistoryCubit(getIt<HistoryRepository>()));
+  getIt.registerFactory(() => RocketCubit(getIt<RocketRepository>()));
+  getIt.registerFactory(() => RocketSearchCubit());
 }

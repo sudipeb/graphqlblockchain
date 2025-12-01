@@ -11,14 +11,15 @@ class AppProvider extends StatelessWidget {
   const AppProvider({super.key});
   @override
   Widget build(context) {
-    final comCubit = dep<CompanyCubit>()..fetchCompany();
-    final hisCubit = dep<HistoryCubit>()..fetchHistories();
-    final rocketCubit = dep<RocketCubit>()..fetchRockets();
-    final rocketSearchCubit = dep<RocketSearchCubit>();
+    ///change the method && naming conventions
+    final companyCubit = getIt<CompanyCubit>()..fetchCompany();
+    final historyCubit = getIt<HistoryCubit>()..fetchHistories();
+    final rocketCubit = getIt<RocketCubit>()..fetchRockets();
+    final rocketSearchCubit = getIt<RocketSearchCubit>();
     return MultiBlocProvider(
       providers: [
-        BlocProvider.value(value: comCubit),
-        BlocProvider.value(value: hisCubit),
+        BlocProvider(create: (context) => companyCubit),
+        BlocProvider.value(value: historyCubit),
         BlocProvider.value(value: rocketCubit),
         BlocProvider.value(value: rocketSearchCubit),
       ],

@@ -17,7 +17,9 @@ class CompanyRemoteDataSourceImpl implements CompanyRemoteDataSource {
   Future<Map<String, dynamic>> fetchCompany() async {
     try {
       final request = GCompanyReq();
-      final response = await graphqlService.client.request(request).first;
+      final response = await graphqlService.client
+          .request(request)
+          .first; //use listener
 
       final companyData = response.data?.company;
       if (companyData == null) {

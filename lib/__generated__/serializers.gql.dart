@@ -38,26 +38,26 @@ import 'package:graphbitcoin/__generated__/schema.schema.gql.dart'
         Gusers_update_column,
         Guuid,
         Guuid_comparison_exp;
-import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.data.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.data.gql.dart'
     show
         GCompanyData,
         GCompanyData_company,
         GCompanyData_company_headquarters,
         GCompanyData_company_links;
-import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.req.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.req.gql.dart'
     show GCompanyReq;
-import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.var.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.var.gql.dart'
     show GCompanyVars;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.data.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.data.gql.dart'
     show
         GHistoriesData,
         GHistoriesData_histories,
         GHistoriesData_histories_links;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.req.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.req.gql.dart'
     show GHistoriesReq;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.var.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.var.gql.dart'
     show GHistoriesVars;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.data.gql.dart'
+import 'package:graphbitcoin/features/rocket/data/graphql/__generated__/get_rocket_details.data.gql.dart'
     show
         GRocketsData,
         GRocketsData_rockets,
@@ -76,9 +76,9 @@ import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_de
         GRocketsData_rockets_second_stage_payloads_composite_fairing_diameter,
         GRocketsData_rockets_second_stage_payloads_composite_fairing_height,
         GRocketsData_rockets_second_stage_thrust;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.req.gql.dart'
+import 'package:graphbitcoin/features/rocket/data/graphql/__generated__/get_rocket_details.req.gql.dart'
     show GRocketsReq;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.var.gql.dart'
+import 'package:graphbitcoin/features/rocket/data/graphql/__generated__/get_rocket_details.var.gql.dart'
     show GRocketsVars;
 
 part 'serializers.gql.g.dart';

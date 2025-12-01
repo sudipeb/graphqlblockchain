@@ -7,11 +7,11 @@ import 'package:built_value/serializer.dart';
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 import 'package:graphbitcoin/__generated__/serializers.gql.dart' as _i6;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.ast.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.ast.gql.dart'
     as _i5;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.data.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.data.gql.dart'
     as _i2;
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.var.gql.dart'
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.var.gql.dart'
     as _i3;
 
 part 'get_history_details.req.gql.g.dart';

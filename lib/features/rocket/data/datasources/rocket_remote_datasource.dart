@@ -1,6 +1,6 @@
 import 'package:graphbitcoin/core/services/graphql_service.dart';
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.data.gql.dart';
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.req.gql.dart';
+import 'package:graphbitcoin/features/rocket/data/graphql/__generated__/get_rocket_details.data.gql.dart';
+import 'package:graphbitcoin/features/rocket/data/graphql/__generated__/get_rocket_details.req.gql.dart';
 
 ///abstract class to fetch the rocket
 abstract class RocketRemoteDataSource {

@@ -7,33 +7,33 @@ import 'package:built_value/serializer.dart';
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 import 'package:graphbitcoin/__generated__/serializers.gql.dart' as _i6;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.ast.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.ast.gql.dart'
     as _i5;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.data.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.data.gql.dart'
     as _i2;
-import 'package:graphbitcoin/features/rocket/graphql/__generated__/get_rocket_details.var.gql.dart'
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.var.gql.dart'
     as _i3;
 
-part 'get_rocket_details.req.gql.g.dart';
+part 'get_company_details.req.gql.g.dart';
 
-abstract class GRocketsReq
+abstract class GCompanyReq
     implements
-        Built<GRocketsReq, GRocketsReqBuilder>,
-        _i1.OperationRequest<_i2.GRocketsData, _i3.GRocketsVars> {
-  GRocketsReq._();
+        Built<GCompanyReq, GCompanyReqBuilder>,
+        _i1.OperationRequest<_i2.GCompanyData, _i3.GCompanyVars> {
+  GCompanyReq._();
 
-  factory GRocketsReq([void Function(GRocketsReqBuilder b) updates]) =
-      _$GRocketsReq;
+  factory GCompanyReq([void Function(GCompanyReqBuilder b) updates]) =
+      _$GCompanyReq;
 
-  static void _initializeBuilder(GRocketsReqBuilder b) => b
+  static void _initializeBuilder(GCompanyReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'Rockets',
+      operationName: 'Company',
     )
     ..executeOnListen = true;
 
   @override
-  _i3.GRocketsVars get vars;
+  _i3.GCompanyVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -47,12 +47,12 @@ abstract class GRocketsReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GRocketsData? Function(
-    _i2.GRocketsData?,
-    _i2.GRocketsData?,
+  _i2.GCompanyData? Function(
+    _i2.GCompanyData?,
+    _i2.GCompanyData?,
   )? get updateResult;
   @override
-  _i2.GRocketsData? get optimisticResponse;
+  _i2.GCompanyData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -65,30 +65,30 @@ abstract class GRocketsReq
   @BuiltValueField(serialize: false)
   _i4.Context? get context;
   @override
-  _i2.GRocketsData? parseData(Map<String, dynamic> json) =>
-      _i2.GRocketsData.fromJson(json);
+  _i2.GCompanyData? parseData(Map<String, dynamic> json) =>
+      _i2.GCompanyData.fromJson(json);
 
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(_i2.GRocketsData data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GCompanyData data) => data.toJson();
 
   @override
-  _i1.OperationRequest<_i2.GRocketsData, _i3.GRocketsVars> transformOperation(
+  _i1.OperationRequest<_i2.GCompanyData, _i3.GCompanyVars> transformOperation(
           _i4.Operation Function(_i4.Operation) transform) =>
       this.rebuild((b) => b..operation = transform(operation));
 
-  static Serializer<GRocketsReq> get serializer => _$gRocketsReqSerializer;
+  static Serializer<GCompanyReq> get serializer => _$gCompanyReqSerializer;
 
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GRocketsReq.serializer,
+        GCompanyReq.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GRocketsReq? fromJson(Map<String, dynamic> json) =>
+  static GCompanyReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GRocketsReq.serializer,
+        GCompanyReq.serializer,
         json,
       );
 }

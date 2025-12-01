@@ -1,6 +1,6 @@
 import 'package:graphbitcoin/core/services/graphql_service.dart';
-import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.req.gql.dart';
-import 'package:graphbitcoin/features/ceodetails/graphql/__generated__/get_company_details.data.gql.dart';
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.req.gql.dart';
+import 'package:graphbitcoin/features/ceodetails/data/graphql/__generated__/get_company_details.data.gql.dart';
 
 ///abstract class to fetch the company data
 abstract class CompanyRemoteDataSource {

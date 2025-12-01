@@ -1,6 +1,6 @@
 import 'package:graphbitcoin/core/services/graphql_service.dart';
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.data.gql.dart';
-import 'package:graphbitcoin/features/history/graphql/__generated__/get_history_details.req.gql.dart';
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.data.gql.dart';
+import 'package:graphbitcoin/features/history/data/graphql/__generated__/get_history_details.req.gql.dart';
 
 ///abstract class to fetch the company histories
 abstract class HistoryRemoteDataSource {

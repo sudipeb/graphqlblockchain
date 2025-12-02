@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_section_widget.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/widget/reusable_text_widgtet.dart';
 
 class CompanyView extends StatelessWidget {
   const CompanyView({super.key});
@@ -91,7 +92,7 @@ List<Widget> _buildExpansionSections(BuildContext context, company) {
         (section) => _CustomExpansionTile(
           title: section.title,
           icon: section.icon,
-          children: section.items.map((text) => _TileText(text: text)).toList(),
+          children: section.items.map((text) => TileText(text: text)).toList(),
         ),
       )
       .toList();
@@ -137,24 +138,6 @@ class _CustomExpansionTile extends StatelessWidget {
           expandedCrossAxisAlignment: CrossAxisAlignment.start,
           children: children,
         ),
-      ),
-    );
-  }
-}
-
-// Reusable TileText widget
-class _TileText extends StatelessWidget {
-  final String text;
-
-  const _TileText({required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 16, color: Colors.black87),
       ),
     );
   }

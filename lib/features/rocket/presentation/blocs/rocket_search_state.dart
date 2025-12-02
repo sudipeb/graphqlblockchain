@@ -1,3 +1,4 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 
 ///state for rocket search

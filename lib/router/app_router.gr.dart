@@ -57,3 +57,19 @@ class RocketRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [RocketViewPage]
+class RocketViewRoute extends PageRouteInfo<void> {
+  const RocketViewRoute({List<PageRouteInfo>? children})
+    : super(RocketViewRoute.name, initialChildren: children);
+
+  static const String name = 'RocketViewRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RocketViewPage();
+    },
+  );
+}

@@ -1,37 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
+part 'rocket_search_cubit.freezed.dart';
 
-///[Cubit] for managing the Rocket search state
-abstract class RocketSearchState {}
-
-class RocketSearchInitial extends RocketSearchState {}
-
-class RocketSearchLoading extends RocketSearchState {
-  final String searchQuery;
-  RocketSearchLoading(this.searchQuery);
-}
-
-class RocketSearchUpdated extends RocketSearchState {
-  final String searchQuery;
-  final List<Rocket> filteredRockets;
-  final List<Rocket> allRockets;
-
-  RocketSearchUpdated({
-    required this.searchQuery,
-    required this.filteredRockets,
-    required this.allRockets,
-  });
-}
-
-class RocketSearchCleared extends RocketSearchState {
-  final List<Rocket> allRockets;
-  RocketSearchCleared(this.allRockets);
+@freezed
+abstract class RocketSearchState with _$RocketSearchState {
+  const factory RocketSearchState.initial() = _Initial;
+  const factory RocketSearchState.loading(String searchQuery) = _Loading;
+  const factory RocketSearchState.searchupdated(
+    String searchQuery,
+    List<Rocket> filteredRockets,
+    List<Rocket> allRockets,
+  ) = _SearchUpdated;
+  const factory RocketSearchState.searchcleared(List<Rocket> allRockets) =
+      _SearchCleared;
 }
 
 class RocketSearchCubit extends Cubit<RocketSearchState> {
   List<Rocket> _allRockets = [];
 
-  RocketSearchCubit() : super(RocketSearchInitial());
+  RocketSearchCubit() : super(RocketSearchState.initial());
 
   void setRockets(List<Rocket> rockets) {
     _allRockets = rockets;
@@ -39,12 +27,12 @@ class RocketSearchCubit extends Cubit<RocketSearchState> {
 
   Future<void> searchRockets(String query) async {
     if (query.isEmpty) {
-      emit(RocketSearchCleared(_allRockets));
+      emit(RocketSearchState.searchcleared(_allRockets));
       return;
     }
 
     // Emit loading state first
-    emit(RocketSearchLoading(query));
+    emit(RocketSearchState.loading(query));
 
     // Simulate search delay for better UX
     await Future.delayed(const Duration(milliseconds: 800));
@@ -55,16 +43,10 @@ class RocketSearchCubit extends Cubit<RocketSearchState> {
       return rocket.name.toLowerCase() == searchQuery;
     }).toList();
 
-    emit(
-      RocketSearchUpdated(
-        searchQuery: query,
-        filteredRockets: filteredRockets,
-        allRockets: _allRockets,
-      ),
-    );
+    emit(RocketSearchState.searchupdated(query, filteredRockets, _allRockets));
   }
 
   void clearSearch() {
-    emit(RocketSearchCleared(_allRockets));
+    emit(RocketSearchState.searchcleared(_allRockets));
   }
 }

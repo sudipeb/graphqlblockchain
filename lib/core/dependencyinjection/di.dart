@@ -9,8 +9,8 @@ import 'package:graphbitcoin/features/history/domain/repository/history_repo_imp
 import 'package:graphbitcoin/features/history/presentation/blocs/history_cubit.dart';
 import 'package:graphbitcoin/features/rocket/data/datasources/rocket_remote_datasource.dart';
 import 'package:graphbitcoin/features/rocket/domain/repository/rocket_repo_impl.dart';
-import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
-import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
+import 'package:graphbitcoin/features/rocket/presentation/blocs/rocket_cubit.dart';
+import 'package:graphbitcoin/features/rocket/presentation/blocs/rocket_search_cubit.dart';
 
 final GetIt getIt = GetIt.instance;
 

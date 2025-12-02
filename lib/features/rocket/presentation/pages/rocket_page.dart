@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
-import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
+import 'package:graphbitcoin/features/rocket/presentation/blocs/rocket_cubit.dart';
+import 'package:graphbitcoin/features/rocket/presentation/blocs/rocket_search_cubit.dart';
 import 'package:graphbitcoin/features/rocket/domain/entity/rocket_entity.dart';
 import 'package:graphbitcoin/router/app_router.dart';
 

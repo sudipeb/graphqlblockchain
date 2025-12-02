@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphbitcoin/features/history/presentation/blocs/history_cubit.dart';
 import 'package:graphbitcoin/features/history/domain/entity/history.dart';
+import 'package:graphbitcoin/features/history/presentation/blocs/history_cubit.dart';
 
 @RoutePage()
 class HistoryPage extends StatelessWidget {
@@ -14,57 +14,46 @@ class HistoryPage extends StatelessWidget {
       appBar: AppBar(title: const Text('SpaceX Histories')),
       body: BlocBuilder<HistoryCubit, HistoryState>(
         builder: (context, state) {
-          if (state is HistoryLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (state is HistoryLoaded) {
-            final List<History> histories = state.histories;
-
-            if (histories.isEmpty) {
-              return const Center(child: Text('No histories found.'));
-            }
-
-            return ListView.builder(
-              itemCount: histories.length,
-              itemBuilder: (context, index) {
-                final History history = histories[index];
-                return Card(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          history.title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text('ID: ${history.id}'),
-                        Text('Details: ${history.details}'),
-                      ],
+          return state.when(
+            initial: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            loaded: (histories) {
+              if (histories!.isEmpty) {
+                return const Center(child: Text('No Histories Found'));
+              }
+              return ListView.builder(
+                itemCount: histories.length,
+                itemBuilder: (context, index) {
+                  final History history = histories[index];
+                  return Card(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
                     ),
-                  ),
-                );
-              },
-            );
-          } else if (state is HistoryError) {
-            return Center(
-              child: Text(
-                'Error: ${state.message}',
-                style: const TextStyle(color: Colors.red),
-              ),
-            );
-          } else if (state is HistoryInitial) {
-            return const Center(child: Text('Initializing...'));
-          } else {
-            return const SizedBox();
-          }
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            history.title,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text('ID: ${history.id}'),
+                          Text('Details: ${history.details}'),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+            error: (message) => Text('Error:$message'),
+          );
         },
       ),
     );

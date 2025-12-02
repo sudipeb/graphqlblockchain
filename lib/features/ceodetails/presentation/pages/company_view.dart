@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_section_widget.dart';
 
 class CompanyView extends StatelessWidget {
   const CompanyView({super.key});
@@ -94,19 +95,6 @@ List<Widget> _buildExpansionSections(BuildContext context, company) {
         ),
       )
       .toList();
-}
-
-// Model for expansion sections
-class ExpansionSection {
-  final String title;
-  final IconData icon;
-  final List<String> items;
-
-  ExpansionSection({
-    required this.title,
-    required this.icon,
-    required this.items,
-  });
 }
 
 // Reusable ExpansionTile widget

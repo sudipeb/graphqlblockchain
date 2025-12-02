@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_section_widget.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_tile_widget.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/reusable_text_widgtet.dart';
 
 class CompanyView extends StatelessWidget {
@@ -89,56 +90,11 @@ List<Widget> _buildExpansionSections(BuildContext context, company) {
 
   return sections
       .map(
-        (section) => _CustomExpansionTile(
+        (section) => CustomExpansionTile(
           title: section.title,
           icon: section.icon,
           children: section.items.map((text) => TileText(text: text)).toList(),
         ),
       )
       .toList();
-}
-
-// Reusable ExpansionTile widget
-class _CustomExpansionTile extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final List<Widget> children;
-
-  const _CustomExpansionTile({
-    required this.title,
-    required this.icon,
-    required this.children,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3)),
-        ],
-      ),
-      child: Theme(
-        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-        child: ExpansionTile(
-          leading: Icon(icon, color: Colors.blueAccent),
-          title: Text(
-            title,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          collapsedIconColor: Colors.blueAccent,
-          iconColor: Colors.blueAccent,
-          childrenPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
-          ),
-          expandedCrossAxisAlignment: CrossAxisAlignment.start,
-          children: children,
-        ),
-      ),
-    );
-  }
 }

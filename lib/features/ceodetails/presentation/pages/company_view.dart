@@ -13,26 +13,25 @@ class CompanyView extends StatelessWidget {
       appBar: AppBar(title: const Text('SpaceX Company Info')),
       body: BlocBuilder<CompanyCubit, CompanyState>(
         builder: (context, state) {
-          if (state is CompanyLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (state is CompanyLoaded) {
-            return Padding(
-              padding: const EdgeInsets.all(16),
-              child: ListView(
-                children: _buildExpansionSections(context, state.company),
-              ),
-            );
-          } else if (state is CompanyError) {
-            return Center(child: Text('Error: ${state.message}'));
-          }
-          return const SizedBox.shrink();
+          return state.when(
+            initial: () => Center(child: CircularProgressIndicator()),
+            loading: () => Center(child: CircularProgressIndicator()),
+            loaded: (company) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView(
+                  children: [..._buildExpansionSections(context, company)],
+                ),
+              );
+            },
+            error: (message) => Text(message),
+          );
         },
       ),
     );
   }
 }
 
-///Todo:pattern matching
 List<Widget> _buildExpansionSections(BuildContext context, company) {
   final sections = [
     ExpansionSection(

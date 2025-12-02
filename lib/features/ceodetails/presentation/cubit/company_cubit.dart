@@ -1,35 +1,30 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/entity/company_entity.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/repository/company_repo_impl.dart';
 
-///[Cubit] to manage the states for Company
-abstract class CompanyState {}
+part 'company_cubit.freezed.dart';
 
-class CompanyInitial extends CompanyState {}
-
-class CompanyLoading extends CompanyState {}
-
-class CompanyLoaded extends CompanyState {
-  final Company company;
-  CompanyLoaded(this.company);
-}
-
-class CompanyError extends CompanyState {
-  final String message;
-  CompanyError(this.message);
+@freezed
+abstract class CompanyState with _$CompanyState {
+  const factory CompanyState.initial() = _Initial;
+  const factory CompanyState.loading() = _Loading;
+  const factory CompanyState.loaded(Company company) = _Loaded;
+  const factory CompanyState.error(String message) = _Error;
 }
 
 class CompanyCubit extends Cubit<CompanyState> {
   final CompanyRepository repository;
-  CompanyCubit(this.repository) : super(CompanyInitial());
+
+  CompanyCubit(this.repository) : super(const CompanyState.initial());
 
   Future<void> fetchCompany() async {
-    emit(CompanyLoading());
+    emit(const CompanyState.loading());
     try {
       final company = await repository.getCompany();
-      emit(CompanyLoaded(company));
+      emit(CompanyState.loaded(company));
     } catch (e) {
-      emit(CompanyError(e.toString()));
+      emit(CompanyState.error(e.toString()));
     }
   }
 }

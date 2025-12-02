@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CustomExpansionTile extends StatelessWidget {
   final String title;
   final IconData icon;
@@ -10,6 +9,7 @@ class CustomExpansionTile extends StatelessWidget {
     required this.title,
     required this.icon,
     required this.children,
+    super.key,
   });
 
   @override
@@ -20,11 +20,7 @@ class CustomExpansionTile extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 6,
-            offset: Offset(0, 3),
-          ),
+          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3)),
         ],
       ),
       child: Theme(

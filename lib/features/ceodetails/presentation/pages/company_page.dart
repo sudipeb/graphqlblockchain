@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/core/dependencyinjection/di.dart';
 
-import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/blocs/company_cubit.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/pages/company_view.dart';
 
 @RoutePage()

@@ -3,7 +3,7 @@ import 'package:graphbitcoin/core/network/dio_client.dart';
 import 'package:graphbitcoin/core/services/graphql_service.dart';
 import 'package:graphbitcoin/features/ceodetails/data/datasources/company_remote_datasource.dart';
 import 'package:graphbitcoin/features/ceodetails/domain/repository/company_repo_impl.dart';
-import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/blocs/company_cubit.dart';
 import 'package:graphbitcoin/features/history/data/datasource/history_remote_datasource.dart';
 import 'package:graphbitcoin/features/history/domain/repository/history_repo_impl.dart';
 import 'package:graphbitcoin/features/history/presentation/cubit/history_cubit.dart';

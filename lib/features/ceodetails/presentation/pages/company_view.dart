@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphbitcoin/features/ceodetails/presentation/cubit/company_cubit.dart';
+import 'package:graphbitcoin/features/ceodetails/presentation/blocs/company_cubit.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_section_widget.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/expansion_tile_widget.dart';
 import 'package:graphbitcoin/features/ceodetails/presentation/widget/reusable_text_widgtet.dart';

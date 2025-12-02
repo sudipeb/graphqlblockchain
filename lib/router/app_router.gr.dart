@@ -43,6 +43,22 @@ class HistoryRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HistoryViewPage]
+class HistoryViewRoute extends PageRouteInfo<void> {
+  const HistoryViewRoute({List<PageRouteInfo>? children})
+    : super(HistoryViewRoute.name, initialChildren: children);
+
+  static const String name = 'HistoryViewRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HistoryViewPage();
+    },
+  );
+}
+
+/// generated route for
 /// [RocketPage]
 class RocketRoute extends PageRouteInfo<void> {
   const RocketRoute({List<PageRouteInfo>? children})

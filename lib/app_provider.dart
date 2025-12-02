@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphbitcoin/core/dependencyinjection/di.dart';
-import 'package:graphbitcoin/features/history/presentation/cubit/history_cubit.dart';
+import 'package:graphbitcoin/features/history/presentation/blocs/history_cubit.dart';
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_cubit.dart';
 import 'package:graphbitcoin/features/rocket/presentation/cubit/rocket_search_cubit.dart';
 import 'package:graphbitcoin/space_x.dart';

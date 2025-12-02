@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphbitcoin/features/history/presentation/cubit/history_cubit.dart';
+import 'package:graphbitcoin/features/history/presentation/blocs/history_cubit.dart';
 import 'package:graphbitcoin/features/history/domain/entity/history.dart';
 
 @RoutePage()
